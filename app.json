@@ -1,26 +1,35 @@
 {
   "expo": {
-    "name": "task-manager-app",
-    "slug": "task-manager-app",
+    "name": "ぽけたす",
+    "slug": "Pocketas",
     "version": "1.0.0",
     "orientation": "portrait",
     "icon": "./assets/images/icon.png",
-    "scheme": "taskmanagerapp",
-    "userInterfaceStyle": "automatic",
-    "newArchEnabled": true,
-    "ios": {
-      "supportsTablet": true
+    "userInterfaceStyle": "light",
+    "splash": {
+      "image": "./assets/splash.png",
+      "resizeMode": "contain",
+      "backgroundColor": "#FFE5D9"
     },
     "android": {
+      "package": "com.yoocda.pocketas",
+      "versionCode": 1,
       "adaptiveIcon": {
-        "foregroundImage": "./assets/images/adaptive-icon.png",
-        "backgroundColor": "#ffffff"
+        "foregroundImage": "./assets/images/android/playstore-icon.png",
+        "backgroundColor": "#FFE5D9"
       },
+      "permissions": [
+        "CAMERA",
+        "READ_EXTERNAL_STORAGE",
+        "WRITE_EXTERNAL_STORAGE"
+      ],
       "edgeToEdgeEnabled": true
     },
+    "ios": {
+      "bundleIdentifier": "com.yoocda.pocketas",
+      "supportsTablet": true
+    },
     "web": {
-      "bundler": "metro",
-      "output": "static",
       "favicon": "./assets/images/favicon.png"
     },
     "plugins": [
@@ -31,12 +40,19 @@
           "image": "./assets/images/splash-icon.png",
           "imageWidth": 200,
           "resizeMode": "contain",
-          "backgroundColor": "#ffffff"
+          "backgroundColor": "#FFE5D9"
         }
       ]
     ],
     "experiments": {
       "typedRoutes": true
-    }
+    },
+    "extra": {
+      "router": {},
+      "eas": {
+        "projectId": "cc975868-164a-4243-993b-dac0f3e1b051"
+      }
+    },
+    "scheme": "pocketas"
   }
 }

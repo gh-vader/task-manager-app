@@ -3,6 +3,7 @@ import { useFonts } from 'expo-font';
 import { Stack } from 'expo-router';
 import { StatusBar } from 'expo-status-bar';
 import 'react-native-reanimated';
+import { View, Platform } from 'react-native';
 
 import { useColorScheme } from '@/hooks/useColorScheme';
 
@@ -19,11 +20,16 @@ export default function RootLayout() {
 
   return (
     <ThemeProvider value={colorScheme === 'dark' ? DarkTheme : DefaultTheme}>
-      <Stack>
-        <Stack.Screen name="(tabs)" options={{ headerShown: false }} />
-        <Stack.Screen name="+not-found" />
-      </Stack>
-      <StatusBar style="auto" />
+      <View style={{ flex: 1, backgroundColor: '#FFE5D9' }}>
+        <StatusBar style="dark" />
+        {Platform.OS === 'android' && (
+          <View style={{ height: 24, backgroundColor: '#FFE5D9' }} /> // ステータスバー下のView
+        )}
+        <Stack>
+          <Stack.Screen name="(tabs)" options={{ headerShown: false }} />
+          <Stack.Screen name="+not-found" />
+        </Stack>
+      </View>
     </ThemeProvider>
   );
 }
